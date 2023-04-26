@@ -4,58 +4,23 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="emp")
+@Table(name = "emp")
 public class Employee {
-	
 	@Id
-	@Column(name="eno")
 	private int code;
-	
-	@Column(name="name")
+	@Column(name = "ename", length = 50, nullable = false)
 	private String empname;
-	
-	@Column(name="desg")
+	@Column(name = "desg", length = 40, nullable = true)
 	private String designation;
-	
-	@Column(name="sal")
 	private int salary;
-	
-	public int getCode() {
-		return code;
-	}
-	public void setCode(int code) {
-		this.code = code;
-	}
-	public String getEmpname() {
-		return empname;
-	}
-	public void setEmpname(String empname) {
-		this.empname = empname;
-	}
-	public String getDesignation() {
-		return designation;
-	}
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-	public int getSalary() {
-		return salary;
-	}
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	public Employee(int code, String empname, String designation, int salary) {
-		super();
-		this.code = code;
-		this.empname = empname;
-		this.designation = designation;
-		this.salary = salary;
-	}
-	public Employee() {
-		super();
-	}
-	
-	
 }

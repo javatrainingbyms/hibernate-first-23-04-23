@@ -28,7 +28,7 @@ public class EmpEntry {
 		session.close();
 		
 		System.out.println("Data Stored Successfully....");
-	
+		
 	}
 
 }
