@@ -8,9 +8,9 @@ public class QBIExample {
 		//Query By Id : get/load
 		
 		Session session = Utility.getSessionFactory().openSession();
-		Employee emp = session.get(Employee.class, 2001);
+		Employee emp = session.get(Employee.class, 2201);
 		if (emp != null) {
-			System.out.println(emp.getCode());
+			System.out.println(emp.getEno());
 			System.out.println(emp.getEmpname());
 			System.out.println(emp.getDesignation());
 			System.out.println(emp.getSalary());

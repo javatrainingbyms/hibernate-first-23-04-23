@@ -17,7 +17,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "emp")
 public class Employee {
 	@Id
-	private int code;
+	@Column(name="code")
+	private int eno;
 	@Column(name = "ename", length = 50, nullable = false)
 	private String empname;
 	@Column(name = "desg", length = 40, nullable = true)
