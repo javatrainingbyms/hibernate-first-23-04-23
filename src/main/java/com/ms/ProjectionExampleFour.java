@@ -1,17 +1,18 @@
 package com.ms;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.transform.Transformers;
 
-public class ProjectionExampleThree {
+public class ProjectionExampleFour {
 
 	public static void main(String[] args) {
-		//here we will project more than one column (empname,salary)
 		Session session=Utility.getSessionFactory().openSession();
 		Criteria criteria=session.createCriteria(Employee.class);
 		
@@ -19,19 +20,21 @@ public class ProjectionExampleThree {
 		Projection proj2=Projections.property("salary");
 		
 		ProjectionList pList=Projections.projectionList();
-		pList.add(proj1); 
-		pList.add(proj2);
+		//pList.add(proj1); 
+		//pList.add(proj2);
+		pList.add(proj1, "name");	//alias	(as a key for map)
+		pList.add(proj2,"pay");		//alias
 		
 		criteria.setProjection(pList);
 		
-		List<Object[]> list=criteria.list();
+		criteria.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);	
 		
-		for(Object ar[]:list) {
-			for(Object item:ar) {
-				System.out.println(item);
-			}
-			System.out.println("------------------------------------");
+		List<Map> list=criteria.list();
+		
+		for(Map map:list) {
+			System.out.println(map);
 		}
+		
 		
 		session.close();
 
