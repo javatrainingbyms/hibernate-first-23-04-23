@@ -8,12 +8,12 @@ import org.hibernate.cfg.Configuration;
 public class AccountEntry {
 
 	public static void main(String[] args) {
-		Account ac1=new Account("a101","sbi","indore");
-		Account ac2=new Account("a102","hdfc","bhopal");
-		Account ac3=new Account("a103","axis","indore");
-		Account ac4=new Account("a104","icici","delhi");
-		Account ac5=new Account("a105","bob","bhopal");
-		Account ac6=new Account("a106","boi","mumbai");
+		Account ac1=new Account("a101","sbi","indore", new Emp(101));
+		Account ac2=new Account("a102","hdfc","bhopal", new Emp(101));
+		Account ac3=new Account("a103","axis","indore", new Emp(102));
+		Account ac4=new Account("a104","icici","delhi", new Emp(102));
+		Account ac5=new Account("a105","bob","bhopal", new Emp(102));
+		Account ac6=new Account("a106","boi","mumbai", new Emp(103));
 		
 		
 		Configuration config=new Configuration().configure();//hibernate.cfg.xml

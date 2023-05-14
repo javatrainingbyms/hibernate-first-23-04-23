@@ -24,6 +24,10 @@ public class EmpSearch {
 		for(Account account:accounts) {
 			System.out.println(account.getAno()+","+account.getBank()+","+account.getBranch());
 		}
+		List<Project> projects=emp.getProjects();
+		for(Project project:projects) {
+			System.out.println(project.getPcode()+","+project.getPname()+","+project.getCname());
+		}
 		
 		session.close();
 

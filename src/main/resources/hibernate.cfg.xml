@@ -15,5 +15,6 @@
         <mapping class="com.ms.mapping.Emp"/>
         <mapping class="com.ms.mapping.Laptop"/>
         <mapping class="com.ms.mapping.Account"/>
+        <mapping class="com.ms.mapping.Project"/>
     </session-factory>
 </hibernate-configuration>
