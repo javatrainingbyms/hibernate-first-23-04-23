@@ -8,7 +8,7 @@ public class QBIExample {
 		//Query By Id : get/load
 		
 		Session session = Utility.getSessionFactory().openSession();
-		Employee emp = session.get(Employee.class, 2201);
+		Employee emp = session.get(Employee.class, 1001);
 		if (emp != null) {
 			System.out.println(emp.getEno());
 			System.out.println(emp.getEmpname());
